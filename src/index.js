@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
+import { firebaseApp } from './firebase';
 
 import App from './Components/App';
 import SignIn from './Components/SignIn';
@@ -24,6 +25,14 @@ import './index.css';
 //         <Link to='/'>SignUp</Link>
 //     </div>
 // )
+
+firebaseApp.auth().onAuthStateChanged(user => {
+    if (user) {
+        console.log('user has signed in or up', user);
+    } else {
+        console.log('user has signed out or still needs to log in')
+    }
+})
 
 ReactDOM.render(
     <BrowserRouter>
