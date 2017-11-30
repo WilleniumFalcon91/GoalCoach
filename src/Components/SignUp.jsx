@@ -33,14 +33,14 @@ class SignUp extends Component {
                         type="text"
                         placeholder="email"
                         onChange={event => this.setState({email: event.target.value})}
-                        style={{marginRight: '5%'}}
+                        style={{marginRight: '5px'}}
                     />
                     <input
                         className="form-control"
                         type="password"
                         placeholder="password"
                         onChange={event => this.setState({password: event.target.value})}
-                        style={{marginRight: '5%'}}
+                        style={{marginRight: '5px'}}
                     />
                     <button
                         className="btn btn-primary"
