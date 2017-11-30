@@ -10,21 +10,21 @@ import SignUp from './Components/SignUp';
 
 import './index.css';
 
-// const App = () => (
-//     <div>App
-//         <Link to='/'>App</Link>
-//     </div>
-// )
-// const SignIn = () => (
-//     <div>SignIn
-//         <Link to='/'>SignIn</Link>
-//     </div>
-// )
-// const SignUp = () => (
-//     <div>SignUp
-//         <Link to='/'>SignUp</Link>
-//     </div>
-// )
+const AppLink = () => (
+    <div>App
+        <Link to='/'>SignUp</Link>
+    </div>
+)
+const SignInLink = () => (
+    <div>SignIn
+        <Link to='/'>App</Link>
+    </div>
+)
+const SignUpLink = () => (
+    <div>SignUp
+        <Link to='/'>SignIn</Link>
+    </div>
+)
 
 firebaseApp.auth().onAuthStateChanged(user => {
     if (user) {
