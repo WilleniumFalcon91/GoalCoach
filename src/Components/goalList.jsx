@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { goalRef } from '../firebase';
 import { setGoals } from '../Actions'
-import GoalItem from './goalItem';
+import GoalItem from './GoalItem';
 
 class GoalList extends Component {
     componentDidMount() {
@@ -11,15 +11,15 @@ class GoalList extends Component {
             snap.forEach(goal => {
                 // let goalObject = goal.val();
                 const { email, title } = goal.val();
-                goals.push({ email, title });
+                const serverKey = goal.key;
+                console.log(goals);
+                goals.push({ email, title, serverKey });
             });
-            console.log('goals', goals);
             this.props.setGoals(goals);
         })
     }
 
     render () {
-        console.log('this.props.goals', this.props.goals);
         return (
             <div>
                 {
