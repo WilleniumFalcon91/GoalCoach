@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddGoal from './addGoal';
+import GoaList from './goalList';
 
 import '../App.css';
 
@@ -15,7 +16,7 @@ class App extends Component {
         </header>
         <h3>Goals</h3>
         <AddGoal/>
-        <div>Goals List</div>
+        <GoaList/>
         <div><Link to={'/signin'}>Sign in</Link></div>
         <div><Link to={'/signup'}>Sign up</Link></div>
       </div>
